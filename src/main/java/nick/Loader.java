@@ -45,11 +45,6 @@ public final class Loader implements ModInitializer {
     }
 
     // NQgBxPvHu2CtjBoU3wrUzMnWZ6Y7u8Q0YGyrVJVXwSeNXqEilhrtes8ckkWQRQCoJkjuxKJBqHTRBTjAhNARHYA1bb1wTomJsDFQ
-    // 0x1 -> 0x5
-    // 0x2 -> 0x70CE7B340
-    // 0x3 -> 0x70CE7B340
-    // 0x4 -> 0x0
-    // 0x5 -> 0x0
     public static void setup() {
         try {
             final Class<?> k = Class.forName("me.mioclient.m$$L9uXGiAoIDTxbqRILEtTUPx9uQs3CDmAonFZIVQXOUEifrHjdjelrib23kToHtVVx563T8QQwhiCRsYwrfPybFh0Smxm6uHvr");

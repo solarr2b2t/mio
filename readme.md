@@ -1,0 +1,2 @@
+mio class loading: https://github.com/openjdk/jdk/blob/04ad59de768b69b4e897a93f46efad9cc25737ad/src/hotspot/share/classfile/classFileParser.cpp#L5439 <br>
+to use the crack just put both `mio.jar` and `mio-loader.jar` in the mods folder along with fabric api and run

@@ -3,6 +3,7 @@ package nick;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Objects;
 
 public final class Modules {
     private static final List<String> MODULES = List.of(
@@ -210,9 +211,30 @@ public final class Modules {
 
             for (String module : MODULES) {
                 Class<?> klass = Class.forName(module.replace('/', '.'));
-                Constructor<?>[] constructors = klass.getDeclaredConstructors();
-                if (constructors.length != 1) throw new RuntimeException(module);
-                m.invoke(manager, constructors[0].newInstance());
+                Constructor<?> c = klass.getDeclaredConstructor();
+                m.invoke(manager, Objects.requireNonNull(c).newInstance());
+            }
+        } catch (Throwable _t) {
+            _t.printStackTrace(System.err);
+        }
+    }
+
+    private static final List<String> EXTRA = List.of(
+            "me/mioclient/m$$H9n4ak8lb4y3DNw6DlYJyEGXWIE21pAOTpOCjfxzhWY3iTmkhnL5BCQrSYL3IG7UwC7tUsEHC5UCBZ8JV0FdMQnFF684SISkP"
+    );
+
+    public static void extra(Object manager) {
+        try {
+            Class<?> k = manager.getClass();
+            Method m = k.getDeclaredMethod(
+                    "m$$91y4uxO1IQagfYqm9FEgYw5vvDkJrRONLQWZCs7n9wzW9fgwgnegqCayTRnSmFjflHrBYGF6ZLPzDKu4mbNi5nwosBbhplPea",
+                    Class.forName("me.mioclient.m$$w9RkV5gTt6ZndK3Uzxqy3DHcO6lwV7MMjmIAH1ZpwaB4GXfxd4yO63rqeR3DHTfzUXq15nxgT4P8aW7zWibHeFQLetK4BIdta")
+            );
+
+            for (String module : EXTRA) {
+                Class<?> klass = Class.forName(module.replace('/', '.'));
+                Constructor<?> c = klass.getDeclaredConstructor();
+                m.invoke(manager, Objects.requireNonNull(c).newInstance());
             }
         } catch (Throwable _t) {
             _t.printStackTrace(System.err);

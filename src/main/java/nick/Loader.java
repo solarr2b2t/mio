@@ -1,8 +1,8 @@
 package nick;
 
 import net.fabricmc.api.ModInitializer;
-import sun.misc.Unsafe;
 
+import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
@@ -10,10 +10,7 @@ public final class Loader implements ModInitializer {
     @Override
     public void onInitialize() {
         try {
-            Field f = Unsafe.class.getDeclaredField("theUnsafe");
-            f.setAccessible(true);
-            Unsafe usf = (Unsafe) f.get(null);
-            usf.ensureClassInitialized(Class.forName("me.mioclient.m$$4bYansx8qyCgfT2CXLJ2ofFTegcTeSQNQmfVWPDznXkBQZZUajn7VVZufassgVXx3cSzarSvG0nZRdXDrqCHwFBlwqb90tTgh"));
+            MethodHandles.lookup().ensureInitialized(Class.forName("me.mioclient.m$$4bYansx8qyCgfT2CXLJ2ofFTegcTeSQNQmfVWPDznXkBQZZUajn7VVZufassgVXx3cSzarSvG0nZRdXDrqCHwFBlwqb90tTgh"));
         } catch (Throwable _t) {
             _t.printStackTrace(System.err);
         }
@@ -66,10 +63,16 @@ public final class Loader implements ModInitializer {
     // iF76bRYZlpLqy2DEIbPLyXlrT5vP8xV9S7sDRHyqEPe9A6Seo3uijfG7nxvvaCeUSPO9Tcv0mfW9Kq6pbeNKpmAwlwEAkJPOUGzK
     public static void modules(Object manager) {
         Modules.initialize(manager);
+        Modules.extra(manager);
     }
 
     // uLyY171HjwpL4FDmQOeWDe6vcl41P82VuQ1kYPJGSzZOqObK7pAExl1qngN91GmHvjmwkb8yGoBehITnO3CE1yCaLs46nHn1pIcB
     public static void commands(Object manager) {
         Commands.initialize(manager);
+    }
+
+    // hSSzy3DhSr5ruAzQYTgccnp8SSwS8rhRrj8vW9ef8XEjt34kA99GHviEIKzVQp7BTBtl75e0EWBZsUJTWtZEs6p7We9NOmg1wHwk
+    public static void settings(Object module) {
+        Settings.initialize(module);
     }
 }

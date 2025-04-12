@@ -1,5 +1,7 @@
 package nick;
 
+import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
+
 import java.awt.*;
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -245,7 +247,7 @@ public final class SettingValues {
         private final Set<?> val;
 
         public SetValue(Set<?> val) {
-            this.val = val;
+            this.val = new ObjectOpenHashSet<>(val);
         }
 
         @Override

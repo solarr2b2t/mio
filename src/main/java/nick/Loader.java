@@ -3,8 +3,6 @@ package nick;
 import net.fabricmc.api.ModInitializer;
 
 import java.lang.invoke.MethodHandles;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 
 public final class Loader implements ModInitializer {
     @Override
@@ -45,18 +43,14 @@ public final class Loader implements ModInitializer {
     public static void setup() {
         try {
             final Class<?> k = Class.forName("me.mioclient.m$$L9uXGiAoIDTxbqRILEtTUPx9uQs3CDmAonFZIVQXOUEifrHjdjelrib23kToHtVVx563T8QQwhiCRsYwrfPybFh0Smxm6uHvr");
-            final Object[] data = {5, "", "", 0L, 0L};
-            int c = 0;
-
-            for (Field field : k.getDeclaredFields()) {
-                if (!Modifier.isStatic(field.getModifiers())) continue;
-                if (!field.getType().isAssignableFrom(data[c].getClass())) throw new RuntimeException();
-                field.setAccessible(true);
-                field.set(null, data[c]);
-                c++;
-            }
+            k.getDeclaredField("m$$i0IzHBAlPXNZIGftaR9YScllb9clMMe74sycvIi7FJZi0IvQF35ezW1sDpjjBuTjYYxe3dScJaZhf10i6x3ktAqL48rE1589f").set(null, 5);
+            k.getDeclaredField("m$$2MpeKmFHJVaviAB1F0K6e34ToZPRu0cl0RztqJ2QwRdKuWIqPTtGs78Lf100HGDL2gO3a5bsW7eeKEloC76MgmCT6xiQrRc6H").set(null, "");
+            k.getDeclaredField("m$$9HeBnT4MwaWiXhu5Hpu69GJ9RzfL4slkk5jtAfcIgmjyJI0yqPGpXDp97kBKRmEjwCsYDqt6hA9qeVn1gSHK2nIttgqUhBURU").set(null, "");
+            k.getDeclaredField("m$$IHBX4hCuwZ2KeSVmCceYZ7356aerzs5mhAScCaieQBzYEwMugPsoBs3M4K5850Z9vEXVbyjepncfSj7kaDts2VogYfZg0Cd9g").set(null, 0L);
+            k.getDeclaredField("m$$8NSuADd2QA8NNmAt0dMgsB5XHxERhiOaF3LvcTk9mp8bqWELTRt58yJutQ39XHgvII9SPlcjrs6mH3fANJzTjUgm4c1a5DUAL").set(null, 0L);
         } catch (Throwable _t) {
             _t.printStackTrace(System.err);
+            throw new RuntimeException();
         }
     }
 

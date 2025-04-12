@@ -32,6 +32,8 @@ public final class MioClassLoader extends SecureClassLoader {
     public InputStream getResourceAsStream(final String string) {
         final InputStream stream = this.loader.getResourceAsStream(string);
         if (stream != null) return stream;
+        InputStream r = MioClassLoader.class.getClassLoader().getResourceAsStream(String.format("mio/%d.bin", Hash.hash(string.getBytes(StandardCharsets.UTF_8))));
+        if (r != null) return r;
         return this.loader.getResourceAsStream(String.format("mio/%d.bin", Hash.hash(string.getBytes(StandardCharsets.UTF_8))));
     }
 }

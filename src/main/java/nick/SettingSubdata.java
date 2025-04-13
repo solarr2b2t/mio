@@ -153,6 +153,7 @@ public final class SettingSubdata {
         @Override
         public void apply(Object setting) {
             try {
+               A1.set(setting, c);
                B1.set(setting, _b1);
                B2.set(setting, _b2);
             } catch (Throwable _t) {

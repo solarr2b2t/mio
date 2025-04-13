@@ -2,7 +2,7 @@ to use the crack just put both `mio.jar` and `mio-loader.jar` in the mods folder
 
 ## credits
 - nick: cracking, deobfuscation, reverse engineering of turboloader / turbonative referance, constant obfuscation, class loading, client loading/decryption routines.
-- hollow: rebuilding, reverse engineering, and deobfuscating turbonative themida code sections, jvm hooks, class loading/decryption routines; helping with various things while rebuilding client loading routines.
+- 0x22: rebuilding, reverse engineering, and deobfuscating turbonative themida code sections, jvm hooks, class loading/decryption routines; helping with various things while rebuilding client loading routines.
 - ???: moral support.
 
 mio class loading hooks: <br>

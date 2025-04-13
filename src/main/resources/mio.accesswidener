@@ -1268,6 +1268,7 @@ accessible field net/minecraft/class_746 field_6251 F
 accessible field net/minecraft/class_746 field_6252 Z
 accessible field net/minecraft/class_746 field_6266 Lnet/minecraft/class_1268;
 accessible field net/minecraft/class_746 field_6273 I
+accessible field net/minecraft/class_1309 field_6273 I
 accessible field net/minecraft/class_746 field_6279 I
 accessible field net/minecraft/class_746 field_7498 Lnet/minecraft/class_1723;
 accessible field net/minecraft/class_746 field_7512 Lnet/minecraft/class_1703;

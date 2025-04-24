@@ -1,3 +1,4 @@
+WARNING: I have not fully checked this so use at your own risk!
 to use the crack just put both `mio.jar` and `mio-loader.jar` in the mods folder along with fabric api and run.
 
 ## credits
